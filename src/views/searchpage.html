@@ -1,0 +1,53 @@
+<div ng-app="myApp" lang="en" >
+    <br>
+    <br>
+    <br>
+  <h2>{{notAvailable}}<h2> 
+<div class="w3-container">
+ <div class="menproducts" style="margin-top:50px;">
+	<div class="row">
+
+    	
+            
+       
+        <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="product in products">
+            <div class="col-item">
+                <div class="photo">
+                    <span ng-click="displayProduct(product)"><img src="{{product.image}}" class="img-responsive" alt="a" ng-style="{'width':'500px', 'height':'400px'}" /></span> 
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="price col-md-6">
+                           
+                            <h6 id="brand" class="price-text-color">{{product.department}}</h6>
+                            <h6 id="brand">{{product.brand}}</h6>
+                            <h6 class="price-text-color" id="brand">{{product.productName}}</h6>
+                            <h6 class="price-text-color">&#x20B9;{{product.price}}</h6>
+                        </div>
+                                             <div class="rating hidden-sm col-md-6" >
+                            <i class="price-text-color fa fa-star" ng-repeat="star in range(product.rating)"></i>
+                            <i class=" fa fa-star" ng-repeat="star in range(5-product.rating)"></i>
+                        </div>
+                    </div>
+                    <div class="separator clear-left">
+                        <button type="button" class="btn btn-warning" ng-click="addItem(product._id,product.productName,product.image,product.price,product.quantity,product.brand,product.manufacturer)">
+                            <i class="fa fa-shopping-cart"></i>Add to cart</button>
+                         
+                                                   <button type="button" class="btn btn-warning pull-right" id="wish" ng-click="wishList(product,$index)" >
+                            <span class="glyphicon glyphicon-heart"></span>Wishlist</button>
+                             
+                       
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+	</div>
+</div>
+   
+
+
+</div>
+   

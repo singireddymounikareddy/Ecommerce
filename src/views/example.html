@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+   
+    function validateForm()
+    {
+        var firstName= document.forms["signupform"]["fname"].value;
+        var lastName = document.forms["signupform"]["lname"].value;
+        var pass = document.forms["signupform"]["password"].value;
+        var cpass = document.forms["signupform"]["cpassword"].value;
+        var mobileNumber = document.forms["signupform"]["mnumber"].value;
+        
+        if(pass == cpass)
+        {
+		 
+    
+	    }
+        else
+	    {
+		  alert("Entered passwords didn't match");
+	    }
+       
+    
+}
+    
+    </script>
+    
+    <style>
+        
+    .modal-dialog {
+       width: 60%;
+       height: 60%;
+       padding: 0;
+       margin:0 auto;
+       display:table;
+       position: absolute;
+       left: 0;
+       right:0;
+       top: 10%; 
+       border-radius: 25px;
+       border: 2px solid #73AD21;
+
+}
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+}
+    
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg" >
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container" >
+  <h2 align="center">Log-in or Sign-Up</h2>
+        <p align="center">If you are an existing user, select login. If you are new, please sign-up.</p>
+    <br>
+  <ul class="nav nav-pills" align="center">
+    <li class="active"><a data-toggle="tab" href="#login"><h3><b>Login</b></h3></a></li>
+    <li><a data-toggle="tab" href="#signup"><h3><b>Sign-Up</b></h3></a></li>
+    
+  </ul>
+
+  <div class="tab-content">
+    <div id="login" class="tab-pane fade in active">
+					<div class="panel panel-info" background-color="green">
+                    <form class="form-horizontal" name="loginform" onsubmit="return validateLogin()" method="post" align="left" >
+					
+	                 <br><br>
+					 
+					 
+                <div class="form-group" align="left">
+                    <label class="control-label col-sm-4" for="email">Email ID: <span class="glyphicon glyphicon-envelope"></span> </label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" id="email" placeholder="Enter your E-mail">
+                            
+                        </div>
+              </div>
+              <br>
+          
+             <div class="form-group" align="center">
+                    <label class="control-label col-sm-4" for="pwd">Password: <span class="glyphicon glyphicon-lock"></span> </label>
+                        <div class="col-sm-4">          
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                        </div>
+             </div>
+             <br>
+          
+             <div class="form-group" align="center">        
+                    <div class="col-sm-offset-4 col-sm-4">
+                        
+                        <button type="submit" class="btn btn-success">Log-In</button>
+                    </div>
+            </div>
+		
+     </form>
+        </div>
+    </div>
+    <div id="signup" class="tab-pane fade">
+	<div class="panel panel-info" background-color="green">
+      <form class="form-horizontal" name="signupform"  onsubmit="return validateForm()" method="post" enctype="application/x-www-form-urlencoded">
+			<br><br>
+          <div class="form-group">
+            <label class="control-label col-sm-4" for="firstname">First Name:</label>
+                <div class="col-sm-4">
+                <input type="text" name="firstName" class="form-control" id="fname" pattern="[a-zA-Z]{3,15}" title="Enter only alphabets" >
+                </div>
+          </div>
+		  <br>	
+          
+		  <div class="form-group">
+            <label class="control-label col-sm-4" for="lastname">Last Name:</label>
+                <div class="col-sm-4">
+                <input type="text" name="lastName" class="form-control" id="lname" pattern="[a-zA-Z]{3,15}" title="Enter only alphabets" >
+                </div>
+          </div>
+		  <br>
+		  <div class="form-group">
+            <label class="control-label col-sm-4" for="emailid">E-Mail ID:</label>
+                <div class="col-sm-4">
+                <input type="email" name="emailid" class="form-control" id="email" >
+                </div>
+          </div>
+          <br>
+		  <div class="form-group">
+            <label class="control-label col-sm-4" for="pwd">Password:</label>
+                <div class="col-sm-4">
+                <input type="password" name="password" class="form-control" pattern="(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}" title=" Password must contain at least one special character,one number and alphabets">
+                </div>
+          </div>
+          <br>
+		  <div class="form-group">
+            <label class="control-label col-sm-4" for="cpwd">Re-enter Password:</label>
+                <div class="col-sm-4">
+                <input type="password" class="form-control" id="cpassword" >
+                </div>
+          </div>
+          <br>
+		  <div class="form-group">
+            <label class="control-label col-sm-4" for="cpwd">Mobile number:</label>
+                <div class="col-sm-4">
+                <input type="text" name="mobilenumber" class="form-control" id="number" pattern="^[1-9]{1}[0-9]{9}$" title="Enter only numbers" >
+                </div>
+          </div>
+          <br>
+      <div class="form-group" align="center" >        
+      <div class="col-sm-offset-4 col-sm-4">
+        <button type="submit" class="btn btn-success" >Register</button>
+      </div>
+    
+      
+          </div>         
+	</form>
+        </div>
+	
+    </div>
+    
+  </div>
+</div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>

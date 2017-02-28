@@ -1,0 +1,469 @@
+
+    
+<style>
+        
+        body {background-color:gainsboro;}
+    
+    .panel-primary > .panel-heading {
+  
+  background-color: black;
+        
+    }
+        
+        .invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+        
+        
+     
+    .modal-dialog {
+       width: 60%;
+       height: 60%;
+       padding: 0;
+       margin:0 auto;
+       display:table;
+       position: absolute;
+       left: 0;
+       right:0;
+       top: 10%; 
+       border-radius: 25px;
+       border: 2px solid #73AD21;
+
+}
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+}
+  
+
+    
+        
+    </style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  
+            <br>
+    <form>    
+    <div class="container">
+    <h2 align="center">Checkout</h2>
+    </div>
+            
+            <br>
+          
+      <div class="container">
+          
+          <div class="panel panel-primary">
+              <div class="panel panel-heading"><h4>Contact Details</h4></div>
+              <div class="panel panel-body">
+          <div class="row">
+                
+          <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="eid"  ><h5>Email ID:</h5></label>
+                        <input type="email" class="form-control" required ng-model="userDetails.emailId"/>
+              <label for="mobno"><h5>Mobile number:</h5></label>
+                        <input type="tel" class="form-control" pattern="^[1-9]{1}[0-9]{9}$" title="Enter a valid mobile number" ng-model="userDetails.mobilebno" required />
+                </div>
+          </div>
+                  <div class="row">
+          <div class="col-md-10 col-sm-10 col-xs-10"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+            <button  class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span>Continue</button>
+        </div>
+                      </div>
+          </div>
+          </div>
+          
+              </div>
+              
+      
+      
+      
+          
+        <div class="container">
+            
+            <div class="panel panel-primary">
+                <div class="panel panel-heading"><h4>Shipping Details</h4></div>
+            
+                <div class="panel panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="comment"><h4>Address:</h4></label>
+                            <textarea class="form-control" rows="3" id="comment" required ></textarea>
+                        </div>
+  
+                    </div>
+              </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="city1"><h4>City:</h4></label>
+                        <select class="form-control" id="city1">
+                        <option>New Delhi</option>
+                        <option>Mumbai</option>
+                        <option>Kolkata</option>
+                        <option>Chennai</option>
+                        <option>Hyderabad</option>
+                        <option>Bengaluru</option>
+                        </select>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label for="zipcode"><h4>Zipcode:</h4></label>
+                        <input type="text" class="form-control" maxlength="6" pattern="\d{6}" title="Enter a valid Zip code" required />
+                </div>
+                
+                
+             </div>
+                    <div class="row">
+                        <div class="col-md-10 col-sm-10 col-xs-10"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+            <button  class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span>Continue</button>
+        </div>
+                    </div>
+                    </div>
+            </div>
+                
+            </div>
+            
+      
+      
+      
+      
+      
+      
+          
+          
+          <div class="container">
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">
+                <h4>Payment Method</h4>
+            </div>
+   
+          <div class="panel panel-body">    
+              
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            
+         <br><div data-toggle="collapse" data-parent="#accordion" href="#collapse1">Credit Card</div><br>
+                
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+                    
+    
+    <div><label>Card number:</label></div>        
+    <div class="row">
+                
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="First four digits"  />
+                            </div>
+                            
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Second four digits"  />
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Third four digits"   />
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Fourth four digits"   />
+                            </div>
+                          <img alt="Credit Card Logo" src="https://images-eu.ssl-images-amazon.com/images/G/31/checkout/payselect/pay-method-logos/credit-cards-in-amex-beacon._CB362086986_.png">
+ 
+          
+          </div>
+         <br>
+        <div class="row">
+            
+                    
+                    <div class="col-md-2 col-sm-2 col-xs-2"><label>Card expiry date:</label>
+                    </div>
+                
+    </div>
+            <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+            
+            <h5>Month</h5>
+      <select class="form-control" id="month1">
+        <option>01(Jan)</option>
+        <option>02(Feb)</option>
+        <option>03(Mar)</option>
+        <option>04(Apr)</option>
+          <option>05(May)</option>
+          <option>06(Jun)</option>
+          <option>07(Jul)</option>
+          <option>08(Aug)</option>
+          <option>09(Sep)</option>
+          <option>10(Oct)</option>
+          <option>11(Nov)</option>
+          <option>12(Dec)</option>
+      </select>
+            </div>
+       <div class="col-md-2 col-sm-2 col-xs-2">     
+      <h5>Year</h5>
+      <select class="form-control" id="year1">
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+          <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2024</option>
+          <option>2025</option>
+        <option>2026</option>
+        <option>2027</option>
+        <option>2028</option>
+          <option>2029</option>
+          <option>2030</option>
+          
+      </select>
+            </div>
+    
+            
+    </div>
+    <br>
+    
+    <div><label>CVV</label></div>
+    <div class="row">
+        
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="cvv" />
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+        <img alt="" src="">
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8">
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span>Continue</button>
+        </div>
+        
+        
+    </div>
+    
+          
+          </div>
+      </div>
+    </div>
+      
+      
+      
+      <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            
+          <br><div data-toggle="collapse" data-parent="#accordion" href="#collapse2">Debit card</div><br>
+            
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+            
+            
+    <div><label>Card number:</label></div>        
+    <div class="row">
+                
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="First four digits" />
+                            </div>
+                            
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Second four digits"   />
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Third four digits"  />
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-1">
+                                <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Fourth four digits"   />
+                            </div>
+                          <img alt="Credit Card Logo" src="https://images-eu.ssl-images-amazon.com/images/G/31/checkout/payselect/pay-method-logos/credit-cards-in-amex-beacon._CB362086986_.png">
+ 
+          
+          </div>
+         <br>
+                <div class="row">
+                    
+                    <div class="col-md-2 col-sm-2 col-xs-2"><label>Card expiry date:</label>
+                    </div>
+                
+                </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+            
+            <h5>Month</h5>
+      <select class="form-control" id="month1">
+        <option>01(Jan)</option>
+        <option>02(Feb)</option>
+        <option>03(Mar)</option>
+        <option>04(Apr)</option>
+          <option>05(May)</option>
+          <option>06(Jun)</option>
+          <option>07(Jul)</option>
+          <option>08(Aug)</option>
+          <option>09(Sep)</option>
+          <option>10(Oct)</option>
+          <option>11(Nov)</option>
+          <option>12(Dec)</option>
+          
+      </select>
+            </div>
+       <div class="col-md-2 col-sm-2 col-xs-2">     
+      <h5>Year</h5>
+      <select class="form-control" id="year1">
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+          <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2024</option>
+          <option>2025</option>
+        <option>2026</option>
+        <option>2027</option>
+        <option>2028</option>
+          <option>2029</option>
+          <option>2030</option>
+      </select>
+            </div>
+            
+    
+            
+    </div>
+    <br>
+    
+    <div><label>CVV</label></div>
+    <div class="row">
+        
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="cvv"   />
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+        <img alt="" src="">
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8">
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+            <button  class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span>Continue</button>
+        </div>
+        
+    </div>
+    
+          
+          
+          </div>
+      </div>
+    </div>
+      
+      <br>
+      
+      
+      
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <br><div data-toggle="collapse" data-parent="#accordion" href="#collapse3">Cash on Delivery</div><br>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          
+          
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="radio">
+                    <label><input type="radio" name="cod">Select this option for cash on delivery.</label>
+                        </div>
+              </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+            </div>
+        <div class="col-md-2 col-sm-2 col-xs-2">
+            <button  class="btn btn-primary"><span class="glyphicon glyphicon-forward"></span>Continue</button>
+        </div>
+                </div>
+              
+            
+            
+          </div>
+      </div>
+    </div>
+  </div> 
+</div>
+          
+      
+      
+      </div>
+      
+      </div>
+      
+    
+    
+    
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-4">
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <button ng-click="placeOrder()" class="btn btn-primary btn-lg btn-block" >Confirm order details</button>
+        </div>
+       
+        </div>
+        <br>
+        <hr>
+        
+    </div>
+    
+        
+        </form>
+    
+
+                
+                
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+
+
+
+

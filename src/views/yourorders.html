@@ -1,0 +1,63 @@
+<div ng-app="myApp"> 
+    <div class="row">
+        <br>
+        <br>
+    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+        
+        
+        
+        
+        <div class="col-md-8 col-sm-8 col-xs-8">
+        
+        
+      
+    <div class="row">
+        <div  ><h1 align="center" ng-style="{ font-family: 'Bangers';font-size: 22px; }">YOUR ORDERS</h1></div>
+            <table class="table table-hover">
+                
+                <thead>
+                    
+                    <tr class="info">
+                        
+                        <th><h4>Product</h4></th>
+                        <th class="text-center"><h4>Quantity</h4></th>
+                        <th class="text-center"><h4>Price</h4></th>
+                        
+                    
+                    </tr>
+                        
+                </thead>
+                    
+                <tbody>
+                    <tr ng-repeat="product in userDetails.orders">
+                        <td class="col-sm-8 col-md-6" >
+                        <div class="media">
+                            <a class="thumbnail pull-left" > <img class="media-object" src="{{product.pimg}}" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a>&nbsp;{{product.pname}}</a></h4>
+                                <h5 class="media-heading">&nbsp; by <a >&nbsp;{{product.pbrand+product.pmanufacturer}}</a></h5>
+                               
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong><span class="productprice" id="prodprice1">{{product.count}}</span></strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong><span class="totalprice" id="totprice1" ng-model="product.itemTotal" >&#x20B9; {{product.itemTotal=product.pprice*product.count}}</span></strong></td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    
+                </tbody>
+                
+            </table>
+        
+    
+
+            
+            
+            
+        
+        
+        
+          </div>
+        </div></div>

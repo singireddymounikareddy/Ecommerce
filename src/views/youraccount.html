@@ -1,0 +1,91 @@
+<div ng-app="myApp" lang="en">
+   
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h2 align="center">{{userName}}</h2>
+    
+    </div>
+            
+            <br>
+          
+      <div class="container">
+          
+          <div class="panel panel-primary">
+              <div class="panel panel-heading"><h4 align="center">Personal Details</h4></div>
+              <div class="panel panel-body">
+          <div class="row row1">
+              <div class="col-md-4 col-sm-4 col-xs-4"></div>
+              
+          <div class="col-md-4 col-sm-4 col-xs-4">
+              <label for="eid"><h5><strong>Name:</strong></h5></label>&nbsp;<strong>{{userDetails.firstName}}</strong><br>
+                    <label for="eid"><h5><strong>Email ID:</strong></h5></label>&nbsp;<strong>{{userDetails.emailId}}</strong><br>
+                        
+              <label for="mobno"><h5><strong>Mobile number:</strong></h5></label><span ng-show="showNum" ng-hide="hideNum">&nbsp;<strong>{{userDetails.mobilebno}}</strong></span>
+             <span ng-show="hideNum" ng-hide="showNum"><input type="text" ng-model="cmobileno" placeholder="{{userDetails.mobilebno}}" pattern="^[1-9]{1}[0-9]{9}$" title="Enter only numbers" required="required"/> </span> 
+                      <button type="button" ng-show="showNum" ng-hide="hideNum" class="btn btn-primary btn-sm" ng-click="changeNum()"><strong>Edit number</strong>
+          <span class="glyphicon glyphicon-pencil"></span>
+        </button><br>
+              
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <div data-toggle="collapse" href="#collapse1"><button class="btn btn-primary btn-block">Change password? &nbsp; <span class="glyphicon glyphicon-pencil"></span></div>
+         </div>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <ul class="list-group">
+          <li class="list-group-item">Current Password:<input type="password" ng-model="password" ng-blur="validatePassword()"></li>
+            <span ng-show="changepasswordshow">
+          <li class="list-group-item">New Password:<input type="password" ng-model="newpassword" pattern="(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}" title=" Password must contain at least one special character,one number and alphabets" required="required"/></li>
+                </span>
+        </ul>
+      </div>
+    </div>
+        <br>
+       <div class="panel panel-default">
+      <div class="panel-heading">
+          <h5>Current address : {{userDetails.address}}</h5>
+        <div class="panel-title">
+          <div data-toggle="collapse" href="#collapse2"><button class="btn btn-primary btn-block">Change Address?&nbsp; <span class="glyphicon glyphicon-pencil"></span></div>
+        </div>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <ul class="list-group">
+            <textarea ng-model="newaddress" rows="6"></textarea>
+        
+        </ul>
+      </div>
+    </div>
+    
+  
+</div>
+              
+
+
+          </div>
+              <div class="col-md-4 col-sm-4 col-xs-4"></div>
+              </div>
+              
+                  <div class="row">
+          <div class="col-md-10 col-sm-10 col-xs-10"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+            <button type="submit" class="btn btn-primary" ng-click="saveChanges()"><span class="glyphicon glyphicon-forward"></span>&nbsp;Save changes</button>
+        </div>
+                      </div>
+           <div><h3 align="center">{{saveNotification}}</h3></div>  
+          
+          </div>
+          
+              </div>
+        </div>
+
+        </div>
+        <style>
+            
+            .panel-body > .row1 {
+
+                background:	#DCDCDC
+                    ;}</style>

@@ -1,0 +1,85 @@
+<div ng-app="myApp"><br><br><br><br><br><br>
+      
+      
+      
+          
+          <div class="col-md-4 col-sm-4 col-xs-4">
+             <div class="row">
+            <div class="thumbnail">
+               <img src="{{product.image}}" alt="Fjords" style="width:60%">
+                <div class="caption">
+                
+                   
+                </div>
+                
+                </div>
+              
+            </div>
+              
+          </div>
+            
+      
+        <div class="col-md-1 col-sm-1 col-xs-1">         
+        </div>
+      
+      
+      
+      <div class="col-md-6 col-sm-6 col-xs-6">
+          
+          <div class="row brandname">
+            <h3 name="brandName"><strong>{{product.brand+product.manufacturer}}</strong></h3>
+            </div>
+          <div class="row productname">
+           <h3 name="productName"><strong>{{product.productName}}</strong></h3>
+          </div>
+          <hr>
+          <div class="row productDescription">
+              <div class="col-md-10 col-sm-10 col-xs-10">
+              <h4><p>{{product.productDescription+product.specifications}}</p></h4>
+          </div>
+          </div>
+          <br>
+          <div class="row price">
+               
+              <h4 class="price">Price:  <span><i class="fa fa-rupee"></i>  {{product.price}}</span></h4>
+              
+              
+          </div>
+         
+          <div class="row">
+              
+               <div ng-show="pshow" ng-hide="phide">         
+              <h4>Size:</h4> &nbsp;<span><div class="col-md-2 col-sm-2 col-xs-2"><select class="form-control" id="prodSize1">
+                    <option ng-repeat="size in size">{{size}}</option>
+                    
+                </select></div> </span>
+              
+              </div>
+              
+             
+            
+          
+          </div>
+          <br>
+           <div class="row">
+                
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+        				<p class="btn-add" align="left">
+        					 <button type="button" class="btn btn-warning" ng-click="addItem(product._id,product.productName,product.image,product.price,product.quantity,product.brand,product.manufacturer)">
+                            <i class="fa fa-shopping-cart"></i>Add to cart</button>
+        				</p>
+        				</div>
+                                       <button type="button" class="btn btn-warning pull-right" id="wish" ng-click="wishList(product,$index)" >
+                            <span class="glyphicon glyphicon-heart"></span>Wishlist</button>
+                             
+               
+              
+                   
+                    
+                    </div>
+          
+            
+        </div>    
+        
+      </div>
+    
